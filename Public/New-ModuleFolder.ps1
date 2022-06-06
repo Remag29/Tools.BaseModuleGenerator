@@ -20,16 +20,20 @@ function New-ModuleFolder {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, Position = 0)] [string] $Name,
-        [Parameter(Mandatory = $true, Position = 1)] [string] $Path
+        [Parameter(Mandatory = $true, Position = 1)] [string] $Path,
+        [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER AUTHOR NAME"
     )
 
     $ModulePath = "$Path\$Name"
 
     # Folder creation
     New-Item "$Path\$Name" -ItemType Directory
-
     New-Item "$ModulePath\Private" -ItemType Directory
     New-Item "$ModulePath\Public" -ItemType Directory
 
+    # Copy PSM1 from module template
     Copy-Item -".\Templates\PSM1_Template.psm1" "$ModulePath"
+
+    # PSD1 generation
+    New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid New-Guid -Author $Author -ModuleVersion "1.0.0.0"
 }
