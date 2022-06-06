@@ -15,7 +15,7 @@
     New-ModuleFolder -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module"
 
 #>
-function New-ModuleFolder {
+function New-TemplateModule {
 
     [CmdletBinding()]
     param (
@@ -30,7 +30,7 @@ function New-ModuleFolder {
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Module")) {
         New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Module" -ItemType Directory
     }
-    
+
     $ModulePath = "$Path\$Name"
 
     # Folder creation

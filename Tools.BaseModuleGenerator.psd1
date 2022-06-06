@@ -66,7 +66,7 @@ Description = 'Module used to generate basic module folder with .psd1 and .psm1'
 
 # Functions to export from this module
 FunctionsToExport =  @(
-	'New-ModuleFolder'
+	'New-TemplateModule'
 )
 
 # Cmdlets to export from this module
@@ -84,7 +84,7 @@ AliasesToExport = '*'
 
 # List of all files packaged with this module
 FileList = @(
-	'.\Public\New-ModuleFolder.ps1',
+	'.\Public\New-TemplateModule.ps1',
 	'.\Templates\PSM1_Template.psm1',
 	'.\Tools.BaseModuleGenerator.psm1',
 	'.\Tools.BaseModuleGenerator.psd1'
