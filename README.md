@@ -2,12 +2,13 @@
 
 ---
 
-Module Powershell permettant de générer une base de module.
-Les fichiers :
+Module Powershell permettant de générer une base de module.  
+
+Génére les fichiers :
 > NomDuModule.psd1  
 > NomDuModule.psm1  
 
-Les dossiers :
+Génére les dossiers :
 > Private  
 > Public  
 
@@ -19,4 +20,8 @@ New-TemplateModule -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPo
 
 ```Powershell
 New-TemplateModule -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module" -Author "Tom"
+```
+
+```Powershell
+New-TemplateModule -Name "MyFirstModule"
 ```
