@@ -14,9 +14,9 @@ Les dossiers :
 ### Exemple
 
 ```Powershell
-New-ModuleFolder -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module"
+New-TemplateModule -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module"
 ```
 
 ```Powershell
-New-ModuleFolder -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module" -Author "Tom"
+New-TemplateModule -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module" -Author "Tom"
 ```
