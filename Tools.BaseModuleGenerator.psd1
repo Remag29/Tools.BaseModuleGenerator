@@ -85,6 +85,7 @@ AliasesToExport = '*'
 # List of all files packaged with this module
 FileList = @(
 	'.\Public\New-ModuleFolder.ps1',
+	'.\Templates\PSM1_Template.psm1',
 	'.\Tools.BaseModuleGenerator.psm1',
 	'.\Tools.BaseModuleGenerator.psd1'
 )
