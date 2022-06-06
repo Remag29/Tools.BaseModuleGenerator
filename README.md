@@ -4,12 +4,12 @@
 
 Module Powershell permettant de générer une base de module.
 Les fichiers :
-> NomDuModule.psd1
-> NomDuModule.psm1
+> NomDuModule.psd1  
+> NomDuModule.psm1  
 
 Les dossiers :
-> Private
-> Public
+> Private  
+> Public  
 
 ### Exemple
 
