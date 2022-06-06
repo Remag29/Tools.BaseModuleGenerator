@@ -34,12 +34,12 @@ function New-TemplateModule {
     $ModulePath = "$Path\$Name"
 
     # Folder creation
-    New-Item "$Path\$Name" -ItemType Directory
-    New-Item "$ModulePath\Private" -ItemType Directory
-    New-Item "$ModulePath\Public" -ItemType Directory
+    New-Item "$Path\$Name" -ItemType Directory | Out-Null
+    New-Item "$ModulePath\Private" -ItemType Directory | Out-Null
+    New-Item "$ModulePath\Public" -ItemType Directory | Out-Null
 
     # Copy PSM1 from module template
-    Copy-Item -".\Templates\PSM1_Template.psm1" "$ModulePath"
+    Copy-Item ".\Templates\PSM1_Template.psm1" "$ModulePath"
 
     # PSD1 generation
     New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid $(New-Guid).Guid -Author $Author -ModuleVersion "1.0.0.0"
