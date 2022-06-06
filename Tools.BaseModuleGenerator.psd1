@@ -66,15 +66,7 @@ Description = 'Module used to generate basic module folder with .psd1 and .psm1'
 
 # Functions to export from this module
 FunctionsToExport =  @(
-	'Add-ExigenceObjectToWord',
-	'Add-WordStyleFromDictionary',
-	'Convert-MarkdownToWord',
-	'Get-ExigenceLineType',
-	'Get-ExigenceObjectList',
-	'New-ExcelTableOLEObject',
-	'New-ExigenceObject',
-	'New-ExigenceTableObject',
-	'New-ImageOLEObject'
+	'New-ModuleFolder'
 )
 
 # Cmdlets to export from this module
@@ -92,19 +84,9 @@ AliasesToExport = '*'
 
 # List of all files packaged with this module
 FileList = @(
-	'.\Dictionary\LinkTypeToStyle.ps1',
-	'.\Dictionary\StyleDictionary.ps1',
-	'.\Public\Add-ExigenceObjectToWord.ps1',
-	'.\Public\Add-WordStyleFromDictionary.ps1',
-	'.\Public\Convert-MarkdownToWord.ps1',
-	'.\Public\Get-ExigenceLineType.ps1',
-	'.\Public\Get-ExigenceObjectList.ps1',
-	'.\Public\New-ExcelTableOLEObject.ps1',
-	'.\Public\New-ExigenceObject.ps1',
-	'.\Public\New-ExigenceTableObject.ps1',
-	'.\Public\New-ImageOLEObject.ps1',
-	'.\fenster.ExigenceConverter.psm1',
-	'.\fenster.ExigenceConverter.psd1'
+	'.\Public\New-ModuleFolder.ps1',
+	'.\Tools.BaseModuleGenerator.psm1',
+	'.\Tools.BaseModuleGenerator.psd1'
 )
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess
