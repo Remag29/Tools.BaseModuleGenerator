@@ -12,6 +12,7 @@ Les dossiers :
 > Public
 
 ### Exemple
-''Powershell
+
+``Powershell
 New-ModuleFolder -Name "MyFirstModule" -Path "C:\Users\Tom\Documents\WindowsPowerShell\Module"
-''
+``
