@@ -42,5 +42,5 @@ function New-TemplateModule {
     Copy-Item -".\Templates\PSM1_Template.psm1" "$ModulePath"
 
     # PSD1 generation
-    New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid New-Guid -Author $Author -ModuleVersion "1.0.0.0"
+    New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid $(New-Guid).Guid -Author $Author -ModuleVersion "1.0.0.0"
 }
