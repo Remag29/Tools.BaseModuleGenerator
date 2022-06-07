@@ -21,7 +21,7 @@ function New-TemplateModule {
     param (
         [Parameter(Mandatory = $true, Position = 0)] [string] $Name,
         [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\WindowsPowerShell\Module",
-        [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER AUTHOR NAME"
+        [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER_AUTHOR_NAME"
     )
 
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
@@ -32,6 +32,7 @@ function New-TemplateModule {
     }
 
     $ModulePath = "$Path\$Name"
+    $PSM1TemplatePath = $MyInvocation.MyCommand.Module.ModuleBase + "\Templates\PSM1_Template.psm1"
 
     # Folder creation
     New-Item "$Path\$Name" -ItemType Directory | Out-Null
@@ -39,7 +40,7 @@ function New-TemplateModule {
     New-Item "$ModulePath\Public" -ItemType Directory | Out-Null
 
     # Copy PSM1 from module template
-    Copy-Item ".\Templates\PSM1_Template.psm1" "$ModulePath"
+    Copy-Item $PSM1TemplatePath $($ModulePath + "\$Name.psm1")
 
     # PSD1 generation
     New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid $(New-Guid).Guid -Author $Author -ModuleVersion "1.0.0.0"
