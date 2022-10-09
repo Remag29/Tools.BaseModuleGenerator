@@ -32,7 +32,7 @@ function New-TemplateModule {
     $ModulePath = "$Path\$Name"
 
     # Test folder conflicts
-    Test-IsFolderExist -Path $ModulePath
+    Test-IsFolderExist -Path $ModulePath | Out-Null
 
 
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
