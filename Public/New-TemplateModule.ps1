@@ -20,19 +20,19 @@ function New-TemplateModule {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, Position = 0)] [string] $Name,
-        [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\WindowsPowerShell\Module",
+        [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\WindowsPowerShell\Modules",
         [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER_AUTHOR_NAME"
     )
 
     Show-ToolsLogo
-    
+
     $Path = Resolve-Path -Path $Path
 
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
         New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell" -ItemType Directory
     }
-    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Module")) {
-        New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Module" -ItemType Directory
+    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Modules")) {
+        New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Modules" -ItemType Directory
     }
 
     $ModulePath = "$Path\$Name"
