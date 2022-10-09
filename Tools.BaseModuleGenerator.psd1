@@ -11,7 +11,7 @@
 RootModule = 'Tools.BaseModuleGenerator.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '1.1.0.0'
 
 # ID used to uniquely identify this module
 GUID = 'aed04a77-6422-49f3-811b-33ac8ae61332'
@@ -87,7 +87,8 @@ FileList = @(
 	'.\Public\New-TemplateModule.ps1',
 	'.\Templates\PSM1_Template.psm1',
 	'.\Tools.BaseModuleGenerator.psm1',
-	'.\Tools.BaseModuleGenerator.psd1'
+	'.\Tools.BaseModuleGenerator.psd1',
+	'.\Private\Show-ToolsLogo.ps1'
 )
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess
@@ -98,5 +99,12 @@ FileList = @(
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
+
+#
+# CHANGELOGS ###################################################
+#
+# Version : 
+#
+#	1.1.0.0 - Added logo on command call
 
 }
