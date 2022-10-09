@@ -23,6 +23,9 @@ function New-TemplateModule {
         [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\WindowsPowerShell\Module",
         [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER_AUTHOR_NAME"
     )
+
+    Show-ToolsLogo
+    
     $Path = Resolve-Path -Path $Path
 
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
