@@ -24,9 +24,16 @@ function New-TemplateModule {
         [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER_AUTHOR_NAME"
     )
 
+    # Print logo on console
     Show-ToolsLogo
 
+    # Test root path of the module
     $Path = Resolve-Path -Path $Path
+    $ModulePath = "$Path\$Name"
+
+    # Test folder conflicts
+    Test-IsFolderExist -Path $ModulePath
+
 
     if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
         New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell" -ItemType Directory
@@ -35,7 +42,7 @@ function New-TemplateModule {
         New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Modules" -ItemType Directory
     }
 
-    $ModulePath = "$Path\$Name"
+    
     $PSM1TemplatePath = $MyInvocation.MyCommand.Module.ModuleBase + "\Templates\PSM1_Template.psm1"
 
     # Folder creation
@@ -48,4 +55,6 @@ function New-TemplateModule {
 
     # PSD1 generation
     New-ModuleManifest -Path "$ModulePath\$Name.psd1" -Guid $(New-Guid).Guid -Author $Author -ModuleVersion "1.0.0.0" -RootModule "$Name.psm1"
+
+    Write-Host "Generation complete !" -ForegroundColor Green
 }
