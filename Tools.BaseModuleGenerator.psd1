@@ -11,7 +11,7 @@
 RootModule = 'Tools.BaseModuleGenerator.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.1.0.0'
+ModuleVersion = '1.1.1.1'
 
 # ID used to uniquely identify this module
 GUID = 'aed04a77-6422-49f3-811b-33ac8ae61332'

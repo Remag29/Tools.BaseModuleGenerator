@@ -20,7 +20,7 @@ function New-TemplateModule {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, Position = 0)] [string] $Name,
-        [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\WindowsPowerShell\Modules",
+        [Parameter(Mandatory = $false, Position = 1)] [string] $Path = "$env:USERPROFILE\Documents\PowerShell\Modules",
         [Parameter(Mandatory = $false, Position = 2)] [string] $Author = "ENTER_AUTHOR_NAME"
     )
 
@@ -35,11 +35,11 @@ function New-TemplateModule {
     Test-IsFolderExist -Path $ModulePath | Out-Null
 
 
-    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
-        New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell" -ItemType Directory
+    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\PowerShell")) {
+        New-Item -Path "$env:USERPROFILE\Documents\PowerShell" -ItemType Directory
     }
-    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Modules")) {
-        New-Item -Path "$env:USERPROFILE\Documents\WindowsPowerShell\Modules" -ItemType Directory
+    if (-Not (Test-Path -Path "$env:USERPROFILE\Documents\PowerShell\Modules")) {
+        New-Item -Path "$env:USERPROFILE\Documents\PowerShell\Modules" -ItemType Directory
     }
 
     
